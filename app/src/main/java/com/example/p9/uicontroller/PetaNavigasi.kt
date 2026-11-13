@@ -1,7 +1,6 @@
 package com.example.p9.uicontroller
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -13,8 +12,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.p9.R
+import com.example.p9.uicontroller.DestinasiEntry
+import com.example.p9.uicontroller.DestinasiHome
+import com.example.p9.uicontroller.EntrySiswaScreen
+import com.example.p9.uicontroller.HomeScreen
+
 
 @Composable
 fun SiswaApp(navController: NavHostController = rememberNavController()) {
@@ -42,5 +48,26 @@ fun SiswaTopAppBar(
                 }
             }
         })
+}
+@Composable
+fun HostNavigasi(
+    navController: NavHostController,
+    modifier: Modifier = Modifier
+) {
+    NavHost(
+        navController = navController,
+        startDestination = DestinasiHome.route,
+        modifier = Modifier
+    )
+    {
+        composable(DestinasiHome.route) {
+            HomeScreen(
+                navigateToItemEntry = { navController.navigate(DestinasiEntry.route) },
+            )
+        }
+        composable(DestinasiEntry.route) {
+            EntrySiswaScreen(navigateBack = { navController.popBackStack() })
 
+        }
+    }
 }
