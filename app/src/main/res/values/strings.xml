@@ -4,5 +4,6 @@
     <string name="deskripsi_no_item">Tidak ada Data Siswa, Tap +</string>
     <string name="nama">Nama Siswa</string>
     <string name="alamat">Alamat Siswa</string>
+    <string name="telepon">Telepon Siswa</string>
 
 </resources>
