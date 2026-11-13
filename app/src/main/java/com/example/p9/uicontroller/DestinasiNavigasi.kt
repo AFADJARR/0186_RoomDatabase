@@ -1,3 +1,8 @@
 package com.example.p9.uicontroller
 
-annotation class DestinasiNavigasi()
+interface DestinasiNavigasi {
+
+    val route : String
+
+    val titleRes : Int
+}
