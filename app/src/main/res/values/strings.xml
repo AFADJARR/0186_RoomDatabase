@@ -5,5 +5,8 @@
     <string name="nama">Nama Siswa</string>
     <string name="alamat">Alamat Siswa</string>
     <string name="telepon">Telepon Siswa</string>
+    <string name="nama1">Nama Siswa</string>
+    <string name="alamat1">Alamat Siswa</string>
+    <string name="telepon1">Telepon Siswa</string>
 
 </resources>
