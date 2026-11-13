@@ -10,5 +10,7 @@
     <string name="telepon1">Telepon Siswa</string>
     <string name="required_field">required field</string>
     <string name="btn_submit">Submit</string>
+    <string name="detail_siswa">Detail SIswa</string>
+    <string name="edit_siswa">Edit Siswa</string>
 
 </resources>
