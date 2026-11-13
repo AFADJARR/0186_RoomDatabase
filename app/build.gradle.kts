@@ -37,6 +37,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.room3.common)
     implementation(libs.compose.icons)
     implementation(libs.bundles.room)
     ksp(libs.room.compiler)
