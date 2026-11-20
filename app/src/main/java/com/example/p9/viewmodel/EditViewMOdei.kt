@@ -26,6 +26,8 @@ class EditViewMOdei(
                     .first()
                     .toUiStateSiswa()
             }
+            uiSTateSiswa =
+                UIStateSiswa(detailSiswa = detailSiswa,
+                    isEntryValid = ValidasiInput(detailSiswa))
         }
-}
-)
+
