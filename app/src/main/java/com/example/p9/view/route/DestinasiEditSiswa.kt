@@ -1,7 +1,6 @@
-package com.example.p9.view.routes
+package com.example.p9.view.route
 
 import com.example.p9.R
-import com.example.p9.uicontroller.DestinasiNavigasi
 
 object DestinasiEditSiswa : DestinasiNavigasi {
     override val route = "item_edit"
