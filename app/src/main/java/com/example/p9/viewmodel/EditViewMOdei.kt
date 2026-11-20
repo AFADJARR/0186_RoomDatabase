@@ -4,6 +4,9 @@ class EditViewMOdei(
     savedStateHandle: SavedStateHandle,
     private val repositoriSiswa: RepositoriSiswa): ViewModel(){
 
+    var uiSTateSiswa by mutableStateOf(UIStateSiswa())
+    private set
+
 
 }
 )
