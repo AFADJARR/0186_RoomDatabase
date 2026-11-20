@@ -23,6 +23,6 @@ import kotlinx.coroutines.flow.Flow
         suspend fun delete(siswa: Siswa)
 
         @Update
-        suspend fun  update(siswa: Siswa)
+        suspend fun update(siswa: Siswa)
     }
 
