@@ -31,3 +31,9 @@ class EditViewMOdei(
                     isEntryValid = ValidasiInput(detailSiswa))
         }
 
+    private fun validasiInput(uiState: DetailSiswa = uiSTateSiswa.detailSiswa): Boolean{
+        return with(uiState){
+            nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
+        }
+    }
+}
