@@ -26,14 +26,23 @@ class EditViewMOdei(
                     .first()
                     .toUiStateSiswa()
             }
-            uiSTateSiswa =
-                UIStateSiswa(detailSiswa = detailSiswa,
-                    isEntryValid = ValidasiInput(detailSiswa))
         }
+
+    fun updateUiState(detailSiswa: DetailSiswa){
+        uiSTateSiswa =
+            UIStateSiswa(detailSiswa = detailSiswa,
+                isEntryValid = validasiInput(detailSiswa))
+    }
 
     private fun validasiInput(uiState: DetailSiswa = uiSTateSiswa.detailSiswa): Boolean{
         return with(uiState){
             nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
+        }
+    }
+
+    suspend fun updateSiswa(){
+        if (validasiInput(uiStateSiswa.detailSiswa)){
+            repositoriSiswa.updateSiswa(uiStateSiswa.detailSiswa.toSiswa())
         }
     }
 }
