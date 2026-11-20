@@ -1,7 +1,10 @@
 package com.example.p9.viewmodel
 
 import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.p9.repository.RepositoriSiswa
+import com.example.p9.view.routes.DestinasiDetailSIswa
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.filterNotNull
@@ -10,19 +13,19 @@ import kotlinx.coroutines.flow.stateIn
 
 class DetailViewModel (
     savedStateHandle: SavedStateHandle,
-    private val repositoriSiswa: RepositoriSiswa) : ViewMOdel(){
+    private val repositoriSiswa: RepositoriSiswa) : ViewModel(){
 
-    private val idSiswa: Int = checkNotNull(savedStateHandle[DestinasiDetailSiswa.ItemIdArg])
+    private val idSiswa: Int = checkNotNull(savedStateHandle[DestinasiDetailSIswa.ItemIdArg])
 
-    val uiDetailState: StateFlow<DetailSiswaUiState> =
+    val uiDetailState: StateFlow<DetailSIswaUiState> =
         repositoriSiswa.getSiswaStream(idSiswa)
             .filterNotNull()
             .map {
-                DetailSiswaUiState(detailSiswa = it.toDetailSiswa())
+                DetailSIswaUiState(detailSiswa = it.toDetailSiswa())
             }.stateIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(TIMEOUT_MILLIS),
-                initialValue = DetailSiswaUiState()
+                initialValue = DetailSIswaUiState()
             )
 
     suspend fun deleteSiswa(){
